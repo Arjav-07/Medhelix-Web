@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MedHelix — Think. Decide. Learn.</title>
+  <meta name="description" content="MedHelix is a medical education app where learners practise clinical reasoning through interactive patient cases. Join the pre-release waitlist.">
+  <meta name="theme-color" content="#F0F0F0">
+  <link rel="canonical" href="https://medhelixapp.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MedHelix — Learn medicine through decisions.">
+  <meta property="og:description" content="Interactive patient cases for medical students and junior doctors. Think it through. Make the call. Learn from what happens next.">
+  <meta property="og:url" content="https://medhelixapp.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23111111'/%3E%3Cpath d='M11 6c0 5 10 5 10 10s-10 5-10 10M21 6c0 5-10 5-10 10s10 5 10 10' fill='none' stroke='%23E38B60' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Critical CSS: above-the-fold shell only. Full system in assets/css/styles.css -->
+  <style>
+    :root {
+      --paper: #F0F0F0; --sand: #E6DFD3; --orange: #E38B60; --orange-deep: #D9785C; --ink: #111111;
+      --font-display: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+      --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+      --font-accent: "Instrument Serif", Georgia, serif;
+      --gutter: 16px; --maxw: 1200px;
+    }
+    html { background: #F0F0F0; scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: clip;
+    }
+    h1 { margin: 0; font-family: var(--font-display); font-weight: 800; letter-spacing: -0.045em; line-height: 0.94; }
+    .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+    .hero { padding-top: clamp(120px, 16vw, 172px); }
+    .hero h1 { font-size: clamp(2.9rem, 8.4vw, 5.5rem); }
+    .accent { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .island { position: fixed; top: 16px; left: 50%; z-index: 120; width: min(calc(100% - 32px), 1000px); transform: translateX(-50%); }
+    .island-bar { width: 200px; height: 54px; border-radius: 999px; background: rgba(17,17,17,.82); }
+    @media (max-width: 767px) {
+      .island { top: auto; bottom: calc(16px + env(safe-area-inset-bottom)); width: calc(100% - 32px); }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================== ISLAND NAV ============================== -->
+<header class="island" data-island>
+  <div class="island-bar">
+    <a class="brand" href="#product" aria-label="MedHelix — back to top">
+      <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true" focusable="false">
+        <path d="M9 2c0 6 10 6 10 12S9 20 9 26M19 2c0 6-10 6-10 12s10 6 10 12M10 7h8M10 21h8" fill="none" stroke="#E38B60" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">MedHelix</span>
+    </a>
+
+    <nav class="island-links" aria-label="Primary">
+      <span class="island-hl" aria-hidden="true"></span>
+      <a href="#product" data-nav="product" aria-current="true">Product</a>
+      <a href="#how-it-works" data-nav="how-it-works">How it works</a>
+      <a href="#features" data-nav="features">Features</a>
+      <a href="#faq" data-nav="faq">FAQ</a>
+    </nav>
+
+    <div class="island-right">
+      <p class="island-count">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="num" data-waitlist-count>1,284</span>
+        <span>on the waitlist</span>
+      </p>
+      <a class="btn btn-primary btn-sm" href="#waitlist" data-magnetic>Join waitlist</a>
+    </div>
+
+    <button class="island-compact" type="button" aria-label="Expand navigation" aria-expanded="false">
+      <span class="compact-label" data-compact-label>Product</span>
+      <svg class="progress-ring" viewBox="0 0 24 24" aria-hidden="true">
+        <circle class="ring-track" cx="12" cy="12" r="9"/>
+        <circle class="ring-fill" cx="12" cy="12" r="9" data-progress-ring/>
+      </svg>
+    </button>
+
+    <div class="island-mobile">
+      <p class="mobile-count">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="num" data-waitlist-count>1,284</span>
+      </p>
+      <button class="island-menu" type="button" aria-expanded="false" aria-controls="island-sheet" aria-label="Open menu">
+        <svg class="od-icon" style="--od-icon-size:20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 15l6-6 6 6"/>
+        </svg>
+      </button>
+      <a class="island-cta-icon" href="#waitlist" aria-label="Join the waitlist">
+        <svg class="od-icon" style="--od-icon-size:19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17L17 7M9 7h8v8"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="island-sheet" id="island-sheet">
+    <nav aria-label="Mobile">
+      <a href="#product" style="--i:0">Product
+        <svg class="od-icon sheet-arrow" style="--od-icon-size:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+      <a href="#how-it-works" style="--i:1">How it works
+        <svg class="od-icon sheet-arrow" style="--od-icon-size:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+      <a href="#features" style="--i:2">Features
+        <svg class="od-icon sheet-arrow" style="--od-icon-size:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+      <a href="#faq" style="--i:3">FAQ
+        <svg class="od-icon sheet-arrow" style="--od-icon-size:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </nav>
+    <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
+    <p class="sheet-count"><span class="num" data-waitlist-count>1,284</span> on the waitlist</p>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================================ HERO ================================ -->
+  <section class="hero" id="product" data-section="product" data-label="Product" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="tagline intro" style="--i:0"><span>Think.</span><span>Decide.</span><span>Learn.</span></p>
+
+        <h1 class="hero-title" id="hero-title">
+          <span class="line">Learn medicine</span>
+          <span class="line">through <em class="accent">decisions.</em></span>
+        </h1>
+
+        <p class="hero-sub intro" style="--i:3">
+          Practise clinical reasoning on interactive patient cases — think it through, make the call, and learn from what happens next.
+        </p>
+
+        <p class="release-chip intro" style="--i:4">Pre-release · Waitlist open</p>
+
+        <form class="join intro" id="hero-form" style="--i:5" novalidate>
+          <div class="join-field">
+            <label class="field-label" for="hero-email">Email address</label>
+            <input class="input" id="hero-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@medschool.edu" aria-describedby="hero-email-error hero-form-status" required>
+            <p class="field-error" id="hero-email-error" hidden></p>
+          </div>
+          <button class="btn btn-primary join-btn" type="submit" data-magnetic>
+            <span class="btn-spinner" aria-hidden="true"></span>
+            <span class="btn-label">Join the waitlist</span>
+          </button>
+          <p class="join-note">We'll email you when your access opens. No spam — leave whenever you like.</p>
+          <div class="form-status" id="hero-form-status" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="hero-success" id="hero-success" role="status" aria-live="polite" hidden>
+          <strong>You're on the list.</strong>
+          <p>You're <span class="num" data-position>#1,285</span> in line. We'll email you when your access opens.</p>
+          <a href="#waitlist">See your place and referral link</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="case-stack" data-stack>
+          <article class="case-card case-card--1" data-depth="0.5" data-tilt-card>
+            <div class="case-top">
+              <span class="case-tag">Cardiology · Case 04</span>
+              <span class="case-live">Live case</span>
+            </div>
+            <div class="case-person">
+              <span class="avatar">AR</span>
+              <div>
+                <strong>Aisha Rahman</strong>
+                <span>34 · 3 days of chest pain</span>
+              </div>
+            </div>
+            <p class="case-detail">Sharp, pleuritic, worse on inspiration. No calf swelling. What do you ask next?</p>
+            <div class="case-vitals">
+              <span class="vital-chip">HR <b>104</b></span>
+              <span class="vital-chip">BP <b>132/84</b></span>
+              <span class="vital-chip">SpO₂ <b>96%</b></span>
+            </div>
+            <svg class="case-mini-ecg" viewBox="0 0 260 40" preserveAspectRatio="none">
+              <path d="M0 20 L20 20 L28 16 L36 26 L44 20 L52 21 L58 8 L64 33 L70 20 L80 19 L88 22 L96 20 L120 20 L128 15 L136 25 L144 20 L152 21 L158 8 L164 33 L170 20 L180 19 L188 22 L196 20 L220 20 L228 15 L236 25 L244 20 L260 20"/>
+            </svg>
+          </article>
+
+          <article class="case-card case-card--2" data-depth="0.9" data-tilt-card>
+            <div class="case-top">
+              <span class="case-tag">Respiratory · Case 11</span>
+              <span class="case-live">Live case</span>
+            </div>
+            <div class="case-person">
+              <span class="avatar avatar--orange">TF</span>
+              <div>
+                <strong>Tomás Ferreira</strong>
+                <span>58 · sudden breathlessness</span>
+              </div>
+            </div>
+            <p class="case-detail">Pleuritic pain and a swollen calf after a long flight. Your move.</p>
+            <div class="case-vitals">
+              <span class="vital-chip">HR <b>112</b></span>
+              <span class="vital-chip">BP <b>118/76</b></span>
+              <span class="vital-chip">SpO₂ <b>94%</b></span>
+            </div>
+          </article>
+
+          <article class="case-card case-card--3" data-depth="1.4" data-tilt-card>
+            <div class="case-top">
+              <span class="case-tag">Neuro · Case 07</span>
+              <span class="case-live">Live case</span>
+            </div>
+            <div class="case-person">
+              <span class="avatar">MC</span>
+              <div>
+                <strong>Mei Lin Chen</strong>
+                <span>27 · dizzy on standing</span>
+              </div>
+            </div>
+            <div class="case-vitals">
+              <span class="vital-chip">HR <b>124</b></span>
+              <span class="vital-chip">BP <b>96/60</b></span>
+              <span class="vital-chip">SpO₂ <b>98%</b></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-ecg" viewBox="0 0 1620 200" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120 L22 120 L32 116 L40 124 L50 120 L58 121 L64 96 L70 150 L76 120 L84 118 L92 122 L100 120 L150 120 L160 112 L170 128 L180 120 L202 120 L212 116 L220 124 L230 120 L238 121 L244 96 L250 150 L256 120 L264 118 L272 122 L280 120 L330 120 L340 112 L350 128 L360 120 L382 120 L392 116 L400 124 L410 120 L418 121 L424 96 L430 150 L436 120 L444 118 L452 122 L460 120 L510 120 L520 112 L530 128 L540 120 L562 120 L572 116 L580 124 L590 120 L598 121 L604 96 L610 150 L616 120 L624 118 L632 122 L640 120 L690 120 L700 112 L710 128 L720 120 L742 120 L752 116 L760 124 L770 120 L778 121 L784 96 L790 150 L796 120 L804 118 L812 122 L820 120 L870 120 L880 112 L890 128 L900 120 L922 120 L932 116 L940 124 L950 120 L958 121 L964 96 L970 150 L976 120 L984 118 L992 122 L1000 120 L1050 120 L1060 112 L1070 128 L1080 120 L1102 120 L1112 116 L1120 124 L1130 120 L1138 121 L1144 96 L1150 150 L1156 120 L1164 118 L1172 122 L1180 120 L1230 120 L1240 112 L1250 128 L1260 120 L1282 120 L1292 116 L1300 124 L1310 120 L1318 121 L1324 96 L1330 150 L1336 120 L1344 118 L1352 122 L1360 120 L1410 120 L1420 112 L1430 128 L1440 120 L1462 120 L1472 116 L1480 124 L1490 120 L1498 121 L1504 96 L1510 150 L1516 120 L1524 118 L1532 122 L1540 120 L1590 120 L1600 112 L1610 128 L1620 120"/>
+    </svg>
+  </section>
+
+  <!-- ============================ SOCIAL PROOF ============================ -->
+  <section class="proof" aria-labelledby="proof-title">
+    <div class="wrap proof-inner">
+      <div class="proof-lead">
+        <strong id="proof-title">Built with clinicians and educators</strong>
+        <span>Cases written for learning, reviewed for clinical accuracy.</span>
+      </div>
+      <div class="logo-row" aria-hidden="true">
+        <span class="logo-slot">[Partner logo]</span>
+        <span class="logo-slot">[Partner logo]</span>
+        <span class="logo-slot">[Partner logo]</span>
+        <span class="logo-slot">[Partner logo]</span>
+      </div>
+      <p class="proof-stat">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="num" data-waitlist-count data-countup>1,284</span>
+        <span>on the waitlist</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ HOW IT WORKS ============================ -->
+  <section class="how section" id="how-it-works" data-section="how-it-works" data-label="How it works" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head rule-wipe" data-reveal>
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-title">One case. <em class="accent">Four</em> decisions.</h2>
+        <p class="section-lede">Each case walks the same path you'll walk on the ward. The patient responds to what you actually do — not to what you meant to do.</p>
+      </div>
+
+      <div class="how-grid">
+        <div class="phone-sticky">
+          <div class="phone" data-phone aria-hidden="true">
+            <span class="phone-notch"></span>
+            <span class="phone-key"></span>
+            <div class="phone-screen">
+
+              <div class="phone-pane is-active" data-pane="0">
+                <div class="pp-top">
+                  <span class="pp-chip">Cardiology · Case 04</span>
+                  <span class="pp-step">01 · History</span>
+                </div>
+                <div class="pp-patient">
+                  <span class="avatar">AR</span>
+                  <div><strong>Aisha Rahman</strong><span>34 · 3 days of chest pain</span></div>
+                </div>
+                <p class="pp-quote">"It's sharp, here on the left. Worse when I breathe in."</p>
+                <div class="pp-vitals">
+                  <div class="pp-vital"><span>HR</span><strong>104<small>bpm</small></strong></div>
+                  <div class="pp-vital"><span>BP</span><strong>132/84</strong></div>
+                  <div class="pp-vital"><span>SpO₂</span><strong>96<small>%</small></strong></div>
+                </div>
+                <svg class="pp-ecg" viewBox="0 0 260 40" preserveAspectRatio="none">
+                  <path d="M0 20 L20 20 L28 16 L36 26 L44 20 L52 21 L58 8 L64 33 L70 20 L80 19 L88 22 L96 20 L120 20 L128 15 L136 25 L144 20 L152 21 L158 8 L164 33 L170 20 L180 19 L188 22 L196 20 L220 20 L228 15 L236 25 L244 20 L260 20"/>
+                </svg>
+                <div class="pp-foot">
+                  <span class="pp-status">Watching</span>
+                  <span class="pp-scenario">Sinus tachycardia</span>
+                </div>
+              </div>
+
+              <div class="phone-pane" data-pane="1">
+                <div class="pp-top">
+                  <span class="pp-chip">Cardiology · Case 04</span>
+                  <span class="pp-step">02 · Examine</span>
+                </div>
+                <div class="pp-patient">
+                  <span class="avatar">AR</span>
+                  <div><strong>Aisha Rahman</strong><span>34 · 3 days of chest pain</span></div>
+                </div>
+                <p class="pp-quote">"It hurts more when you press there. I can't take a deep breath."</p>
+                <div class="pp-vitals">
+                  <div class="pp-vital"><span>HR</span><strong>108<small>bpm</small></strong></div>
+                  <div class="pp-vital"><span>BP</span><strong>128/82</strong></div>
+                  <div class="pp-vital"><span>SpO₂</span><strong>95<small>%</small></strong></div>
+                </div>
+                <svg class="pp-ecg" viewBox="0 0 260 40" preserveAspectRatio="none">
+                  <path d="M0 20 L20 20 L28 16 L36 26 L44 20 L52 21 L58 8 L64 33 L70 20 L80 19 L88 22 L96 20 L120 20 L128 15 L136 25 L144 20 L152 21 L158 8 L164 33 L170 20 L180 19 L188 22 L196 20 L220 20 L228 15 L236 25 L244 20 L260 20"/>
+                </svg>
+                <div class="pp-foot">
+                  <span class="pp-status">Watching</span>
+                  <span class="pp-scenario">Reduced air entry</span>
+                </div>
+              </div>
+
+              <div class="phone-pane" data-pane="2">
+                <div class="pp-top">
+                  <span class="pp-chip">Cardiology · Case 04</span>
+                  <span class="pp-step">03 · Investigate</span>
+                </div>
+                <div class="pp-patient">
+                  <span class="avatar">AR</span>
+                  <div><strong>Aisha Rahman</strong><span>34 · 3 days of chest pain</span></div>
+                </div>
+                <p class="pp-quote">"The ECG's ready. What are you seeing?"</p>
+                <div class="pp-vitals">
+                  <div class="pp-vital"><span>HR</span><strong>112<small>bpm</small></strong></div>
+                  <div class="pp-vital"><span>BP</span><strong>118/76</strong></div>
+                  <div class="pp-vital"><span>SpO₂</span><strong>94<small>%</small></strong></div>
+                </div>
+                <svg class="pp-ecg" viewBox="0 0 260 40" preserveAspectRatio="none">
+                  <path d="M0 20 L20 20 L28 16 L36 26 L44 20 L52 21 L58 8 L64 33 L70 20 L80 19 L88 22 L96 20 L120 20 L128 15 L136 25 L144 20 L152 21 L158 8 L164 33 L170 20 L180 19 L188 22 L196 20 L220 20 L228 15 L236 25 L244 20 L260 20"/>
+                </svg>
+                <div class="pp-foot">
+                  <span class="pp-status">Unstable</span>
+                  <span class="pp-scenario">S1Q3T3 pattern</span>
+                </div>
+              </div>
+
+              <div class="phone-pane" data-pane="3">
+                <div class="pp-top">
+                  <span class="pp-chip">Cardiology · Case 04</span>
+                  <span class="pp-step">04 · Treat</span>
+                </div>
+                <div class="pp-patient">
+                  <span class="avatar">AR</span>
+                  <div><strong>Aisha Rahman</strong><span>34 · 3 days of chest pain</span></div>
+                </div>
+                <p class="pp-quote">"The pain's easing a little. I can breathe deeper now."</p>
+                <div class="pp-vitals">
+                  <div class="pp-vital"><span>HR</span><strong>96<small>bpm</small></strong></div>
+                  <div class="pp-vital"><span>BP</span><strong>126/80</strong></div>
+                  <div class="pp-vital"><span>SpO₂</span><strong>97<small>%</small></strong></div>
+                </div>
+                <svg class="pp-ecg" viewBox="0 0 260 40" preserveAspectRatio="none">
+                  <path d="M0 20 L20 20 L28 16 L36 26 L44 20 L52 21 L58 8 L64 33 L70 20 L80 19 L88 22 L96 20 L120 20 L128 15 L136 25 L144 20 L152 21 L158 8 L164 33 L170 20 L180 19 L188 22 L196 20 L220 20 L228 15 L236 25 L244 20 L260 20"/>
+                </svg>
+                <div class="pp-foot">
+                  <span class="pp-status">Responding</span>
+                  <span class="pp-scenario">Anticoagulated</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <ol class="steps" data-steps>
+          <li class="step is-active" data-step="0">
+            <div class="step-head"><span class="step-num">01</span><h3>History</h3></div>
+            <p>Start with the story. Ask open questions, follow the thread, and build a timeline that actually fits.</p>
+            <div class="step-bar"></div>
+          </li>
+          <li class="step" data-step="1">
+            <div class="step-head"><span class="step-num">02</span><h3>Examine</h3></div>
+            <p>Move from story to signs. Focus your exam on what would change your mind.</p>
+            <div class="step-bar"></div>
+          </li>
+          <li class="step" data-step="2">
+            <div class="step-head"><span class="step-num">03</span><h3>Investigate</h3></div>
+            <p>Order what answers the question. Every test costs time and money — just like on the ward.</p>
+            <div class="step-bar"></div>
+          </li>
+          <li class="step" data-step="3">
+            <div class="step-head"><span class="step-num">04</span><h3>Treat</h3></div>
+            <p>Commit to a plan, then watch the patient respond. The debrief shows what your decision changed.</p>
+            <div class="step-bar"></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FEATURES ============================== -->
+  <section class="features section" id="features" data-section="features" data-label="Features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="section-head rule-wipe" data-reveal>
+        <p class="eyebrow">The product</p>
+        <h2 id="features-title">Built for the way you <em class="accent">actually</em> study.</h2>
+        <p class="section-lede">Short sessions, real decisions, and feedback that names the gap — on the train, between ward rounds, or at 11pm before an exam.</p>
+      </div>
+
+      <div class="bento reveal-group">
+        <article class="tile tile--dark tile--chat" data-tilt style="--i:0">
+          <span class="tile-icon">
+            <svg class="od-icon" style="--od-icon-size:19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 21l1.9-4.6A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/>
+            </svg>
+          </span>
+          <h3>AI patient chat</h3>
+          <p>Ask anything. The patient answers in character — the history you'd get at the bedside, not a search result.</p>
+          <div class="chat-demo">
+            <div class="bubble bubble--user">Does the pain spread anywhere?</div>
+            <div class="bubble bubble--patient">
+              It goes into my left shoulder… and it's worse when I lie flat.
+              <span class="typing" aria-hidden="true"><i></i><i></i><i></i></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile tile--vitals" data-tilt style="--i:1">
+          <span class="tile-icon">
+            <svg class="od-icon" style="--od-icon-size:19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12h4l2.5-6 3.5 12 3-6h7"/>
+            </svg>
+          </span>
+          <h3>Live vitals</h3>
+          <p>Every decision moves the numbers. Watch the patient respond in real time.</p>
+          <div class="mini-monitor">
+            <svg class="mini-ecg" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0 32 L30 32 L40 26 L50 38 L60 32 L70 33 L78 12 L86 50 L94 32 L104 30 L112 34 L120 32 L150 32 L160 25 L170 39 L180 32 L190 33 L198 12 L206 50 L214 32 L224 30 L232 34 L240 32 L270 32 L280 25 L290 39 L300 32 L310 33 L318 12 L326 50 L334 32 L344 30 L352 34 L360 32 L400 32"/>
+            </svg>
+            <div class="mini-vitals">
+              <div><span>HR</span><b>104</b><small>bpm</small></div>
+              <div><span>SpO₂</span><b>96</b><small>%</small></div>
+              <div><span>RR</span><b>22</b><small>/min</small></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile tile--paper tile--hints" data-tilt style="--i:2">
+          <span class="tile-icon">
+            <svg class="od-icon" style="--od-icon-size:19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5.9 1.2.9 2.1h5.2c0-.9.3-1.6.9-2.1A6 6 0 0 0 12 3z"/>
+            </svg>
+          </span>
+          <h3>Five-attempt hints</h3>
+          <p>Stuck? Take one nudge at a time. The reasoning stays yours.</p>
+          <div class="hint-dots" aria-hidden="true">
+            <span style="--i:0">1</span>
+            <span style="--i:1">2</span>
+            <span style="--i:2">3</span>
+            <span style="--i:3">4</span>
+            <span style="--i:4">5</span>
+          </div>
+        </article>
+
+        <article class="tile tile--debrief" data-tilt style="--i:3">
+          <span class="tile-icon">
+            <svg class="od-icon" style="--od-icon-size:19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a5 5 0 0 0-5 5c0 2 1 3 1 4h8c0-1 1-2 1-4a5 5 0 0 0-5-5zM9 16h6M10 20h4"/>
+            </svg>
+          </span>
+          <h3>AI tutor debrief</h3>
+          <p>After every case: what you caught, what you missed, and why it mattered.</p>
+          <div class="debrief-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+        </article>
+
+        <article class="tile tile--paper tile--xp" data-tilt style="--i:4">
+          <span class="tile-icon">
+            <svg class="od-icon" style="--od-icon-size:19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3c2 3 5 4 5 8a5 5 0 0 1-10 0c0-4 3-5 5-8zM12 21v-4"/>
+            </svg>
+          </span>
+          <h3>XP &amp; streaks</h3>
+          <p>Small sessions, visible momentum. Streaks that survive a busy rotation.</p>
+          <div class="xp-demo" aria-hidden="true">
+            <div class="xp-meta"><span>Level 7</span><span>640 / 900 XP</span></div>
+            <div class="xp-track"><span></span></div>
+          </div>
+        </article>
+
+        <article class="tile tile--orange tile--challenge" data-tilt style="--i:5">
+          <span class="tile-icon">
+            <svg class="od-icon" style="--od-icon-size:19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="13" r="8"/>
+              <path d="M12 9v4l2.5 2M9 2h6"/>
+            </svg>
+          </span>
+          <h3>90-second challenges</h3>
+          <p>One decision. Ninety seconds. A quick rep between patients.</p>
+          <div class="timer-demo" aria-hidden="true">
+            <svg viewBox="0 0 80 80">
+              <circle class="timer-track" cx="40" cy="40" r="36"/>
+              <circle class="timer-fill" cx="40" cy="40" r="36"/>
+            </svg>
+            <span class="timer-num">90</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ INTERACTIVE DEMO ============================ -->
+  <section class="demo section" id="demo" data-section="demo" data-label="Live demo" aria-labelledby="demo-title">
+    <div class="wrap">
+      <div class="section-head rule-wipe" data-reveal>
+        <p class="eyebrow">Try it now</p>
+        <h2 id="demo-title">Make the <em class="accent">call.</em></h2>
+        <p class="section-lede">This is a simplified case. The real ones give you a full history, an exam, and a patient who answers back.</p>
+      </div>
+
+      <div class="demo-wrap" data-reveal>
+        <div class="demo-case">
+          <div class="demo-patient">
+            <span class="avatar">AR</span>
+            <div>
+              <strong>Aisha Rahman, 34</strong>
+              <span>Cardiology · 3 days of chest pain</span>
+            </div>
+          </div>
+          <p class="demo-vignette">
+            Sharp chest pain that worsens on inspiration. HR 104, BP 132/84, SpO₂ 96%. No calf swelling, no recent travel. She looks uncomfortable but is speaking in full sentences.
+          </p>
+          <p class="demo-question" id="demo-question">What do you order first?</p>
+          <div class="demo-options" role="group" aria-labelledby="demo-question">
+            <button class="option" type="button" data-answer="ecg">
+              <span class="option-key" aria-hidden="true">A</span>
+              Order a 12-lead ECG
+            </button>
+            <button class="option" type="button" data-answer="fluids">
+              <span class="option-key" aria-hidden="true">B</span>
+              Give 500 ml IV fluids
+            </button>
+            <button class="option" type="button" data-answer="discharge">
+              <span class="option-key" aria-hidden="true">C</span>
+              Reassure and discharge
+            </button>
+          </div>
+          <button class="demo-reset" type="button" data-demo-reset hidden>Reset the case</button>
+        </div>
+
+        <div class="demo-monitor" data-monitor>
+          <div class="demo-monitor-head">
+            <span class="monitor-dot" aria-hidden="true"></span>
+            Live monitor
+            <span class="monitor-tag">Aisha R.</span>
+          </div>
+          <svg class="monitor-ecg" viewBox="0 0 600 160" preserveAspectRatio="none" aria-hidden="true">
+            <path class="ecg-path ecg-path--stable" d="M0 90 L30 90 L56 90 L64 82 L72 98 L82 90 L92 92 L100 56 L108 129.1 L116 90 L126 87 L134 93 L144 90 L170 90 L196 90 L204 82 L212 98 L222 90 L232 92 L240 56 L248 129.1 L256 90 L266 87 L274 93 L284 90 L310 90 L336 90 L344 82 L352 98 L362 90 L372 92 L380 56 L388 129.1 L396 90 L406 87 L414 93 L424 90 L450 90 L476 90 L484 82 L492 98 L502 90 L512 92 L520 56 L528 129.1 L536 90 L546 87 L554 93 L564 90 L600 90"/>
+            <path class="ecg-path ecg-path--unstable" d="M0 90 L30 90 L34 84 L38 98 L46 90 L52 92 L58 70 L64 116 L70 90 L76 88 L82 94 L90 90 L104 90 L108 78 L112 100 L118 90 L126 90 L132 82 L138 96 L146 90 L154 88 L160 94 L168 90 L176 90 L180 72 L184 110 L190 90 L198 86 L204 96 L212 90 L224 90 L228 84 L232 98 L240 90 L248 88 L254 66 L260 118 L268 90 L274 84 L280 96 L288 90 L300 90 L306 80 L310 98 L318 90 L330 90 L336 76 L340 104 L348 90 L356 88 L362 96 L370 90 L384 90 L390 62 L394 110 L402 90 L408 84 L416 96 L424 90 L440 90 L446 82 L450 96 L458 90 L466 88 L470 72 L474 108 L482 90 L490 86 L496 96 L504 90 L520 90 L526 74 L530 100 L538 90 L548 88 L554 64 L560 112 L568 90 L576 82 L584 96 L592 90 L600 90"/>
+          </svg>
+          <div class="monitor-vitals">
+            <div class="mv"><span>Heart rate</span><strong data-vital="hr">104</strong><small>bpm</small></div>
+            <div class="mv"><span>Blood pressure</span><strong data-vital="bp">132/84</strong></div>
+            <div class="mv"><span>O₂ saturation</span><strong data-vital="spo2">96</strong><small>%</small></div>
+          </div>
+          <p class="monitor-status" data-demo-status data-tone="ok">Stable · awaiting your decision</p>
+          <p class="monitor-feedback" data-demo-feedback role="status" aria-live="polite">Choose an action to see how the patient responds.</p>
+          <p class="monitor-note">Demo scenario. Vitals are simulated for illustration, not clinical guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== WAITLIST ============================== -->
+  <section class="waitlist dark-surface" id="waitlist" data-section="waitlist" data-label="Waitlist" aria-labelledby="waitlist-title">
+    <div class="wrap waitlist-grid">
+      <div class="waitlist-copy" data-reveal>
+        <p class="eyebrow eyebrow--light">Early access</p>
+        <h2 id="waitlist-title">Get in <em class="accent">earlier.</em></h2>
+        <p class="section-lede section-lede--light">
+          Places open in small batches, so the first cohort gets a working product and a direct line to the people building it.
+        </p>
+
+        <ul class="perks">
+          <li>
+            <svg class="od-icon" style="--od-icon-size:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Founding access before general release
+          </li>
+          <li>
+            <svg class="od-icon" style="--od-icon-size:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            A say in which cases and features come next
+          </li>
+          <li>
+            <svg class="od-icon" style="--od-icon-size:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            No card required to hold your place
+          </li>
+        </ul>
+
+        <div class="cohort">
+          <div class="cohort-row">
+            <span>Founding cohort</span>
+            <b><span class="num" data-waitlist-count>1,284</span> / 1,500 places</b>
+          </div>
+          <div class="cohort-track" role="progressbar" aria-label="Founding cohort places filled" aria-valuemin="0" aria-valuemax="1500" aria-valuenow="1284">
+            <span class="cohort-fill" data-cohort-fill style="--p:0.856"></span>
+          </div>
+          <p class="cohort-note">Founding places are capped so feedback stays useful. When they're gone, the next batch opens later.</p>
+        </div>
+      </div>
+
+      <div class="waitlist-panel" data-reveal style="--d:120ms">
+        <form class="wl-form" id="waitlist-form" novalidate>
+          <div class="wl-intro">
+            <h3>Join the founding cohort</h3>
+            <p class="panel-sub">Takes ten seconds. One email when your access opens.</p>
+          </div>
+          <div class="join-field">
+            <label class="field-label" for="waitlist-email">Email address</label>
+            <input class="input" id="waitlist-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@medschool.edu" aria-describedby="waitlist-email-error waitlist-form-status" required>
+            <p class="field-error" id="waitlist-email-error" hidden></p>
+          </div>
+
+          <fieldset class="roles">
+            <legend>I'm joining as</legend>
+            <div class="role-row">
+              <label class="role">
+                <input type="radio" name="role" value="Student" checked>
+                <span>Student</span>
+              </label>
+              <label class="role">
+                <input type="radio" name="role" value="Junior doctor">
+                <span>Junior doctor</span>
+              </label>
+              <label class="role">
+                <input type="radio" name="role" value="Educator">
+                <span>Educator</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <button class="btn btn-primary wl-submit" type="submit" data-magnetic>
+            <span class="btn-spinner" aria-hidden="true"></span>
+            <span class="btn-label">Join the waitlist</span>
+          </button>
+
+          <p class="wl-note">By joining you agree to receive pre-release updates from MedHelix. Unsubscribe any time. Read the <a href="https://medhelixapp.com/privacy" target="_blank" rel="noopener">privacy notice</a>.</p>
+          <div class="form-status" id="waitlist-form-status" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="waitlist-success" id="waitlist-success" hidden>
+          <p class="success-kicker">You're in</p>
+          <p class="success-title" tabindex="-1">You're <span class="num" data-position>#1,285</span> in line.</p>
+          <p class="success-body">We'll email you when your access opens. Bring a colleague and you both move up — referrals are counted in order.</p>
+          <div class="ref-field">
+            <label class="ref-label" for="ref-link">Your referral link</label>
+            <div class="ref-row">
+              <input class="input" id="ref-link" type="text" readonly value="https://medhelixapp.com/?ref=MHLX-8F3K2">
+              <button class="btn btn-ghost ref-copy" type="button" data-copy-ref>Copy</button>
+            </div>
+            <p class="copy-feedback" data-copy-feedback role="status" aria-live="polite"></p>
+          </div>
+          <p class="success-body">This is a pre-release demo, so your place is saved in this browser only.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================= FAQ ================================= -->
+  <section class="faq section" id="faq" data-section="faq" data-label="FAQ" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head rule-wipe" data-reveal>
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-title">The honest <em class="accent">answers.</em></h2>
+      </div>
+
+      <div class="faq-list" data-reveal>
+        <div class="faq-item">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+              What will MedHelix cost?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1">
+            <div class="faq-a-inner">
+              <p>Pricing hasn't been announced yet. The waitlist is the first way in, and founding members will hear about any pricing before it applies to them.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+              How is this different from a question bank?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2">
+            <div class="faq-a-inner">
+              <p>A question bank asks you to recall. MedHelix asks you to decide: you take a history, examine, investigate and treat, then see how the patient responds. The reasoning is the point, not the answer key.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              Are the cases based on real clinical practice?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <div class="faq-a-inner">
+              <p>Cases are written and reviewed with clinicians and educators. They are fictional composites built for learning — not records of real patients, and not a protocol to follow at work.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              Can I use it for exam revision?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            <div class="faq-a-inner">
+              <p>Yes. The cases map to common presentations and the reasoning skills tested in medical school and foundation training. It complements your question bank rather than replacing it.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+              What devices does it work on?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5">
+            <div class="faq-a-inner">
+              <p>MedHelix is being designed phone-first — short cases you can finish between ward rounds. We'll confirm the full list of supported devices before access opens.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+              What happens to my email?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6">
+            <div class="faq-a-inner">
+              <p>It's used only to tell you when your access opens and to send occasional pre-release updates. You can leave the list at any time. The <a href="https://medhelixapp.com/privacy" target="_blank" rel="noopener">privacy notice</a> has the detail.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================================ FOOTER ================================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#product">
+          <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true" focusable="false">
+            <path d="M9 2c0 6 10 6 10 12S9 20 9 26M19 2c0 6-10 6-10 12s10 6 10 12M10 7h8M10 21h8" fill="none" stroke="#D9785C" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-name">MedHelix</span>
+        </a>
+        <p>Think. Decide. Learn.<br>Clinical reasoning, practised one patient at a time.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#product">Product</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#demo">Demo</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://medhelixapp.com/privacy" target="_blank" rel="noopener">Privacy</a>
+      </nav>
+    </div>
+
+    <p class="disclaimer">
+      <strong>Not a substitute for clinical judgement.</strong> MedHelix is an educational tool for simulated learning. It is not a medical device and must never be used to make decisions about a real patient. Always follow your local guidelines, supervision and escalation policy.
+    </p>
+
+    <div class="footer-base">
+      <span>© 2026 MedHelix · Pre-release</span>
+      <span>medhelixapp.com</span>
+    </div>
+  </div>
+</footer>
+
+<script defer src="assets/js/counter.js"></script>
+<script defer src="assets/js/nav-island.js"></script>
+<script defer src="assets/js/main.js"></script>
+</body>
+</html>

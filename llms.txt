@@ -1,0 +1,28 @@
+# MedHelix — Clinical Reasoning & Interactive Medical Cases
+
+> MedHelix is a medical education platform where medical students, foundation doctors, and clinicians practise clinical decision-making through interactive, phone-first patient cases.
+
+## Overview
+
+MedHelix replaces passive question banks with active clinical reasoning. Rather than recalling answers from multiple-choice lists, learners examine virtual patients, review dynamic vitals, order investigations, and initiate treatments, observing physiological patient responses in real time.
+
+- [MedHelix Home](https://medhelixapp.com/): Official website and early access registration
+- [How It Works](https://medhelixapp.com/#how-it-works): The 4-step clinical decision flow (History, Examine, Investigate, Treat)
+- [Key Features](https://medhelixapp.com/#features): AI patient chat, live vitals monitor, step hints, AI tutor debrief, and 90-second ward challenges
+- [Interactive Clinical Demo](https://medhelixapp.com/#demo): 40-year-old patient presentation (acute chest pain)
+- [Waitlist Registration](https://medhelixapp.com/#waitlist): Founding member access and cohort counter
+- [Frequently Asked Questions](https://medhelixapp.com/#faq): Case authenticity, exam revision applicability (USMLE, UKMLA, PLAB, OSCE), and platform availability
+- [Privacy Notice](https://medhelixapp.com/privacy): Data protection and waitlist email privacy
+
+## Key Capabilities & Educational Design
+
+- **Clinical Case Simulation**: Realistic clinical scenarios designed by clinicians and medical educators.
+- **Differential Diagnosis Training**: Formulate and refine working diagnoses as new clinical data emerges.
+- **Micro-Learning on Wards**: 90-second to 5-minute case increments tailored for hospital rotations and ward rounds.
+- **Exam Alignment**: Directly relevant to USMLE Step 1 & Step 2 CK, UKMLA / PLAB, and clinical OSCEs.
+
+## Optional
+
+- [Contact](mailto:info@medhelixapp.com): Official inquiries and educator collaboration
+- [XML Sitemap](https://medhelixapp.com/sitemap.xml): Machine-readable URL structure
+- [Full LLM Context](https://medhelixapp.com/llms-full.txt): Extended documentation for AI models

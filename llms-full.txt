@@ -1,0 +1,39 @@
+# MedHelix — Complete Platform Context & Clinical Learning Architecture
+
+> MedHelix is a clinical decision simulation platform engineered to train medical students, junior doctors, and healthcare professionals in diagnostic reasoning, physiological interpretation, and acute patient management.
+
+## 1. Educational Philosophy: Reasoning vs Recall
+
+Traditional medical revision tools rely heavily on static multiple-choice questions (MCQs), which test factual recognition rather than practical bedside cognition. MedHelix models real clinical practice:
+- **Uncertainty & Ambiguity**: Patients present with non-specific symptoms rather than textbook summaries.
+- **Consequential Choices**: Decisions have physiological downstream effects. Inappropriate fluid administration or missed ECG interpretation impacts patient vitals.
+- **Adaptive Guidance**: An AI clinical tutor provides evidence-based debriefs based on established clinical guidelines (NICE, AHA/ACC, ESC).
+
+## 2. The 4-Step Patient Interaction Loop
+
+1. **History Taking**: Interactive conversational dialogue exploring chief complaint, past medical history, medications, and system reviews.
+2. **Clinical Examination**: Targeted physical exams (cardiovascular, respiratory, abdominal, neurological) with authentic visual and auscultatory signs.
+3. **Diagnostic Investigations**: Selecting laboratory assays (FBC, U&Es, Troponin, ABG), imaging (Bedside Echo, CXR, CTPA), and electrocardiograms.
+4. **Targeted Treatment & Review**: Prescribing medications, titrating oxygen therapy, fluid boluses, and reviewing vital sign stabilization.
+
+## 3. Case Library & Curricular Alignment
+
+Cases span core acute and hospital specialties:
+- **Cardiology**: Acute Coronary Syndromes (NSTEMI/STEMI), Acute Pericarditis, Aortic Dissection, Arrhythmias.
+- **Respiratory Medicine**: Pulmonary Embolism, Tension Pneumothorax, COPD Exacerbation, Severe Pneumonia.
+- **Emergency & Acute Medicine**: Sepsis resuscitation, Anaphylaxis, DKA, Acute Abdomen.
+- **Neurology & Stroke**: Acute Stroke/TIA, Subarachnoid Haemorrhage, Meningitis.
+
+Relevant for candidates preparing for:
+- United States Medical Licensing Examination (USMLE Step 1, Step 2 CK)
+- UK Medical Licensing Assessment (UKMLA / PLAB)
+- Objective Structured Clinical Examinations (OSCEs)
+- Australian Medical Council (AMC Clinical)
+- Foundation Programme / Medical Intern rotations
+
+## 4. Technical & Platform Specifications
+
+- **Client Design**: Phone-first responsive web application, fast loading, zero layout shift.
+- **Data Privacy**: GDPR/DPA compliant; waitlist entries require verified consent and are strictly used for access notification.
+- **Contact**: info@medhelixapp.com
+- **Website**: https://medhelixapp.com/

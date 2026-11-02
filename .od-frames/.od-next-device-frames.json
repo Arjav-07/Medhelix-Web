@@ -1,0 +1,10 @@
+{
+  "schema": "open-design.od-next-device-frames/v1",
+  "files": {
+    "android.html": "ddbf15a26c4e551510ad9c19322e0115b0c5f33f8710c4c128e9b275a91c2c0a",
+    "deck-framework.md": "bfcbae696a6a0f45b10d67f7e34b0427ea1018a6922e1451311d04efbe6144f0",
+    "iphone.html": "3246ff6d89815101615934d5ade2e67cc87cb952703fe14abc7e8b87d6d8ea5b",
+    "layout.css": "f75877e11698ff5514d66d3e6bb8abec42e92e8a0f2525e8c83ee536003d477e",
+    "neutral.html": "438ed024356dc0848d61de50b3d9c9bfc58310fd917821053714ca97ebd83aee"
+  }
+}

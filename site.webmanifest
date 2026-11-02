@@ -1,0 +1,26 @@
+{
+  "name": "MedHelix — Learn Medicine Through Decisions",
+  "short_name": "MedHelix",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F0F0F0",
+  "theme_color": "#F0F0F0",
+  "description": "Interactive patient cases for medical students and junior doctors.",
+  "icons": [
+    {
+      "src": "assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
