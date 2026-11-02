@@ -1,0 +1,4 @@
+# Ignore local SEO tooling and data from Vercel deployment
+claude-seo-main
+data/
+*.log
