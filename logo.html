@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MedHelix — Brand Assets & Logo Kit</title>
+  <meta name="description" content="Official MedHelix brand assets, vector SVGs, high-resolution PNGs, and color specifications.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #F0F0F0;
+      --card-bg: #FFFFFF;
+      --ink: #111111;
+      --ink-muted: #666666;
+      --orange: #E38B60;
+      --orange-deep: #D9785C;
+      --sand: #E6DFD3;
+      --border: rgba(17, 17, 17, 0.08);
+      --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: clamp(32px, 6vw, 64px) 20px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 20px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 8px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .back-btn:hover {
+      background: #FFFFFF;
+      border-color: rgba(17, 17, 17, 0.25);
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin: 0 0 12px 0;
+      line-height: 1.05;
+    }
+    .lead {
+      font-size: 18px;
+      color: var(--ink-muted);
+      margin: 0 0 48px 0;
+      max-width: 640px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    .preview-box {
+      padding: 48px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      position: relative;
+    }
+    .preview-box.light {
+      background: #FAFAFA;
+      border-bottom: 1px solid var(--border);
+    }
+    .preview-box.dark {
+      background: #111111;
+      border-bottom: 1px solid #222222;
+    }
+    .preview-box.paper {
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+    }
+    .card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: var(--ink-muted);
+      margin: 0 0 20px 0;
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      color: var(--ink);
+      transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    }
+    .btn:hover {
+      background: #F5F5F5;
+      border-color: rgba(17,17,17,0.25);
+    }
+    .btn-primary {
+      background: var(--orange);
+      color: #FFFFFF;
+      border-color: var(--orange);
+    }
+    .btn-primary:hover {
+      background: var(--orange-deep);
+      border-color: var(--orange-deep);
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #111111;
+      color: #FFFFFF;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s;
+      z-index: 9999;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+    .colors-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 48px;
+    }
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .color-swatch {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .color-fill {
+      height: 80px;
+      width: 100%;
+    }
+    .color-info {
+      padding: 12px;
+      background: #FFFFFF;
+    }
+    .color-name {
+      font-weight: 700;
+      font-size: 14px;
+      margin: 0 0 4px 0;
+    }
+    .color-hex {
+      font-family: monospace;
+      font-size: 13px;
+      color: var(--ink-muted);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/" aria-label="MedHelix Home">
+        <svg width="24" height="24" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M9 2c0 6 10 6 10 12S9 20 9 26M19 2c0 6-10 6-10 12s10 6 10 12M10 7h8M10 21h8" fill="none" stroke="#E38B60" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <span>MedHelix</span>
+      </a>
+      <a class="back-btn" href="/">← Back to Website</a>
+    </header>
+
+    <main>
+      <h1>Brand Assets & Logo Kit</h1>
+      <p class="lead">Official vector SVGs, high-resolution transparent PNGs, and app icons for MedHelix.</p>
+
+      <div class="grid">
+
+        <!-- 1. Full Horizontal Logo (Dark) -->
+        <div class="card">
+          <div class="preview-box light">
+            <img src="assets/img/logo.svg" alt="MedHelix Logo Dark" style="height: 40px; width: auto;">
+          </div>
+          <div class="card-body">
+            <div>
+              <h2 class="card-title">Full Logo (Dark Text)</h2>
+              <p class="card-desc">For white or light backgrounds. Mark + bold Plus Jakarta Sans typography.</p>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="assets/img/logo.svg" download="medhelix-logo.svg">Download SVG</a>
+              <a class="btn" href="assets/img/logo.png" download="medhelix-logo.png">Download PNG</a>
+              <button class="btn" onclick="copySvg('logo.svg')">Copy SVG</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Full Horizontal Logo (White) -->
+        <div class="card">
+          <div class="preview-box dark">
+            <img src="assets/img/logo-white.svg" alt="MedHelix Logo White" style="height: 40px; width: auto;">
+          </div>
+          <div class="card-body">
+            <div>
+              <h2 class="card-title">Full Logo (White Text)</h2>
+              <p class="card-desc">For dark backgrounds, headers, and media overlays.</p>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="assets/img/logo-white.svg" download="medhelix-logo-white.svg">Download SVG</a>
+              <a class="btn" href="assets/img/logo-white.png" download="medhelix-logo-white.png">Download PNG</a>
+              <button class="btn" onclick="copySvg('logo-white.svg')">Copy SVG</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Standalone Helix Mark -->
+        <div class="card">
+          <div class="preview-box paper">
+            <img src="assets/img/logo-mark.svg" alt="MedHelix Mark" style="height: 64px; width: 64px;">
+          </div>
+          <div class="card-body">
+            <div>
+              <h2 class="card-title">Helix Mark (Isolated)</h2>
+              <p class="card-desc">The standalone double helix symbol in brand coral. Transparent background.</p>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="assets/img/logo-mark.svg" download="medhelix-mark.svg">Download SVG</a>
+              <a class="btn" href="assets/img/logo-mark.png" download="medhelix-mark.png">Download PNG</a>
+              <button class="btn" onclick="copySvg('logo-mark.svg')">Copy SVG</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. App Icon (Tile) -->
+        <div class="card">
+          <div class="preview-box light">
+            <img src="assets/img/icon-512.png" alt="MedHelix App Icon" style="height: 80px; width: 80px; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+          </div>
+          <div class="card-body">
+            <div>
+              <h2 class="card-title">App Icon (512x512)</h2>
+              <p class="card-desc">High-resolution rounded dark tile for App Store, Android, and Web Manifest.</p>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="assets/img/icon-512.png" download="medhelix-app-icon-512.png">Download 512px</a>
+              <a class="btn" href="assets/img/apple-touch-icon.png" download="apple-touch-icon.png">Apple Icon</a>
+              <a class="btn" href="assets/img/favicon-32.png" download="favicon-32.png">Favicon 32px</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Color Palette -->
+      <section class="colors-section">
+        <h2 style="font-family: var(--font-display); font-size: 20px; font-weight: 800; margin: 0;">Brand Color Palette</h2>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-fill" style="background: #E38B60;"></div>
+            <div class="color-info">
+              <div class="color-name">Brand Coral (Helix)</div>
+              <div class="color-hex" onclick="copyText('#E38B60')">#E38B60 📋</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-fill" style="background: #D9785C;"></div>
+            <div class="color-info">
+              <div class="color-name">Deep Coral (Hover)</div>
+              <div class="color-hex" onclick="copyText('#D9785C')">#D9785C 📋</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-fill" style="background: #111111;"></div>
+            <div class="color-info">
+              <div class="color-name">Ink Charcoal</div>
+              <div class="color-hex" onclick="copyText('#111111')">#111111 📋</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-fill" style="background: #F0F0F0; border-bottom: 1px solid var(--border);"></div>
+            <div class="color-info">
+              <div class="color-name">Paper Background</div>
+              <div class="color-hex" onclick="copyText('#F0F0F0')">#F0F0F0 📋</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script>
+    function copyText(str) {
+      navigator.clipboard.writeText(str).then(() => showToast('Color ' + str + ' copied!'));
+    }
+    function copySvg(filename) {
+      fetch('assets/img/' + filename)
+        .then(r => r.text())
+        .then(code => {
+          navigator.clipboard.writeText(code).then(() => showToast('SVG code copied!'));
+        })
+        .catch(() => showToast('Could not load SVG'));
+    }
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    }
+  </script>
+</body>
+</html>
